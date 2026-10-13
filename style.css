@@ -8,7 +8,7 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #0a0e17; /* رمادي عميق وفخم مستوحى من بيئة التطوير */
+    background-color: #0a0e17;
     color: #e2e8f0;
 }
 
@@ -53,7 +53,7 @@ body {
 }
 
 .logo span {
-    color: #818cf8; /* بنفسجي هادئ راقي */
+    color: #818cf8;
 }
 
 .nav-links {
