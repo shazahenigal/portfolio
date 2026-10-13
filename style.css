@@ -8,7 +8,7 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: #0b1329; /* كحلي دافئ وراقي جداً */
+    background-color: #0a0e17; /* رمادي عميق وفخم مستوحى من بيئة التطوير */
     color: #e2e8f0;
 }
 
@@ -29,10 +29,10 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(11, 19, 41, 0.9);
-    backdrop-filter: blur(12px);
+    background: rgba(10, 14, 23, 0.85);
+    backdrop-filter: blur(14px);
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .nav-container {
@@ -53,7 +53,7 @@ body {
 }
 
 .logo span {
-    color: #38bdf8;
+    color: #818cf8; /* بنفسجي هادئ راقي */
 }
 
 .nav-links {
@@ -72,13 +72,13 @@ body {
 }
 
 .nav-links a:hover {
-    color: #38bdf8;
+    color: #818cf8;
 }
 
 /* --- SECTION LABELS & TITLES --- */
 section {
     padding: 7rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-label {
@@ -86,7 +86,7 @@ section {
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: #38bdf8;
+    color: #818cf8;
     margin-bottom: 0.8rem;
     text-transform: uppercase;
 }
@@ -105,7 +105,7 @@ section {
     display: flex;
     align-items: center;
     padding-top: 8rem;
-    background: radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%);
+    background: radial-gradient(circle at 15% 25%, rgba(129, 140, 248, 0.07) 0%, transparent 45%);
 }
 
 .sub-title {
@@ -126,7 +126,7 @@ section {
 .hero-role {
     font-size: 1.6rem;
     font-weight: 600;
-    color: #38bdf8;
+    color: #818cf8;
     margin-bottom: 1.5rem;
 }
 
@@ -154,12 +154,12 @@ section {
 }
 
 .btn-primary {
-    background-color: #38bdf8;
-    color: #0b1329;
+    background-color: #818cf8;
+    color: #0a0e17;
 }
 
 .btn-primary:hover {
-    background-color: #0284c7;
+    background-color: #6366f1;
     color: #fff;
     transform: translateY(-2px);
 }
@@ -170,8 +170,8 @@ section {
 }
 
 .btn-secondary:hover {
-    border-color: #38bdf8;
-    color: #38bdf8;
+    border-color: #818cf8;
+    color: #818cf8;
     transform: translateY(-2px);
 }
 
@@ -179,7 +179,7 @@ section {
 .highlight-statement {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #38bdf8;
+    color: #818cf8;
     margin-bottom: 1.5rem;
 }
 
@@ -229,21 +229,22 @@ section {
     display: flex;
     align-items: flex-start;
     padding: 1.5rem;
-    background: #15203b; /* كحلي مائل للرمادي */
+    background: #131826;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
 }
 
 .skill-item:hover {
     transform: translateX(8px);
-    border-color: rgba(56, 189, 248, 0.3);
+    background: #171e31;
+    border-color: rgba(129, 140, 248, 0.3);
 }
 
 .skill-number {
     font-size: 1.2rem;
     font-weight: 800;
-    color: #38bdf8;
+    color: #818cf8;
     margin-right: 2rem;
     min-width: 30px;
 }
@@ -268,10 +269,16 @@ section {
 }
 
 .project-card {
-    background: #15203b;
+    background: #131826;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(129, 140, 248, 0.25);
+    transform: translateY(-4px);
 }
 
 .project-images-container {
@@ -279,7 +286,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 10px;
     padding: 15px;
-    background: #0d152a;
+    background: #0d121c;
 }
 
 .project-img-wrapper img {
@@ -302,7 +309,7 @@ section {
 .project-tech-tag {
     font-size: 0.78rem;
     font-weight: 700;
-    color: #38bdf8;
+    color: #818cf8;
     text-transform: uppercase;
     letter-spacing: 1px;
     display: block;
@@ -328,7 +335,7 @@ section {
     align-items: center;
     gap: 8px;
     color: #fff;
-    background: #1e293b;
+    background: #1d2538;
     padding: 0.7rem 1.4rem;
     border-radius: 6px;
     text-decoration: none;
@@ -338,8 +345,8 @@ section {
 }
 
 .project-btn:hover {
-    background: #38bdf8;
-    color: #0b1329;
+    background: #818cf8;
+    color: #0a0e17;
 }
 
 /* --- CONTACT SECTION --- */
@@ -369,16 +376,17 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: #15203b;
+    background: #131826;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .contact-card:hover {
-    border-color: #38bdf8;
+    border-color: #818cf8;
     transform: translateY(-3px);
+    background: #171e31;
 }
 
 .contact-card-info {
@@ -390,7 +398,7 @@ section {
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 2px;
-    color: #38bdf8;
+    color: #818cf8;
     margin-bottom: 0.2rem;
 }
 
@@ -407,7 +415,7 @@ section {
 }
 
 .contact-card:hover .contact-arrow {
-    color: #38bdf8;
+    color: #818cf8;
 }
 
 /* --- FOOTER --- */
@@ -416,7 +424,7 @@ footer {
     text-align: center;
     color: #64748b;
     font-size: 0.88rem;
-    background-color: #080e1e;
+    background-color: #070a11;
 }
 
 /* --- RESPONSIVE MOBILE STYLING --- */
