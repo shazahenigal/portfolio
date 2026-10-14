@@ -19,8 +19,8 @@
         html {
             scroll-behavior: smooth;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0f1117;
-            color: #e2e8f0;
+            background-color: #f8fafc; /* خلفية ناصعة ومريحة للعين */
+            color: #334155;
         }
 
         body {
@@ -40,10 +40,10 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(15, 17, 23, 0.85);
+            background: rgba(248, 250, 252, 0.88);
             backdrop-filter: blur(12px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .nav-container {
@@ -58,13 +58,13 @@
         .logo {
             font-size: 1.3rem;
             font-weight: 800;
-            color: #f8fafc;
+            color: #0f172a;
             text-decoration: none;
             letter-spacing: -0.5px;
         }
 
         .logo span {
-            color: #a855f7;
+            color: #7c3aed;
         }
 
         .nav-links {
@@ -74,7 +74,7 @@
         }
 
         .nav-links a {
-            color: #94a3b8;
+            color: #64748b;
             text-decoration: none;
             font-size: 0.8rem;
             font-weight: 600;
@@ -83,13 +83,13 @@
         }
 
         .nav-links a:hover {
-            color: #f8fafc;
+            color: #0f172a;
         }
 
         /* --- SECTIONS --- */
         section {
             padding: 7rem 0 5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .section-label {
@@ -97,7 +97,7 @@
             font-size: 0.75rem;
             font-weight: 700;
             letter-spacing: 2px;
-            color: #a855f7;
+            color: #7c3aed;
             margin-bottom: 0.8rem;
             text-transform: uppercase;
         }
@@ -105,7 +105,7 @@
         .section-title {
             font-size: 2.1rem;
             font-weight: 800;
-            color: #ffffff;
+            color: #0f172a;
             margin-bottom: 2.5rem;
             letter-spacing: -0.5px;
         }
@@ -116,7 +116,7 @@
             display: flex;
             align-items: center;
             padding-top: 8rem;
-            background: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 40%);
+            background: radial-gradient(circle at 10% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 40%);
         }
 
         .sub-title {
@@ -129,7 +129,7 @@
         .hero-text h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            color: #f8fafc;
+            color: #0f172a;
             margin: 0.5rem 0;
             letter-spacing: -1px;
         }
@@ -137,14 +137,14 @@
         .hero-role {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #cbd5e1;
+            color: #475569;
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
             max-width: 650px;
             font-size: 1.05rem;
-            color: #94a3b8;
+            color: #475569;
             line-height: 1.8;
             margin-bottom: 2.5rem;
         }
@@ -165,23 +165,24 @@
         }
 
         .btn-primary {
-            background-color: #f8fafc;
-            color: #0f1117;
+            background-color: #0f172a;
+            color: #ffffff;
         }
 
         .btn-primary:hover {
-            background-color: #e2e8f0;
+            background-color: #1e293b;
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #cbd5e1;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            background-color: #ffffff;
         }
 
         .btn-secondary:hover {
-            border-color: #f8fafc;
-            color: #fff;
+            border-color: #0f172a;
+            color: #0f172a;
             transform: translateY(-2px);
         }
 
@@ -189,14 +190,14 @@
         .highlight-statement {
             font-size: 1.75rem;
             font-weight: 700;
-            color: #f8fafc;
+            color: #0f172a;
             margin-bottom: 1.5rem;
         }
 
         .about-text {
             max-width: 780px;
             font-size: 1.05rem;
-            color: #94a3b8;
+            color: #475569;
             line-height: 1.8;
             margin-bottom: 1.2rem;
         }
@@ -206,7 +207,7 @@
             gap: 4rem;
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid #e2e8f0;
         }
 
         .meta-box {
@@ -218,14 +219,14 @@
             font-size: 0.72rem;
             font-weight: 700;
             letter-spacing: 2px;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 0.3rem;
         }
 
         .meta-value {
             font-size: 1.05rem;
             font-weight: 700;
-            color: #f1f5f9;
+            color: #0f172a;
         }
 
         /* --- SKILLS SECTION --- */
@@ -239,21 +240,22 @@
             display: flex;
             align-items: flex-start;
             padding: 1.4rem;
-            background: #161922;
+            background: #ffffff;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            border: 1px solid #e2e8f0;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .skill-item:hover {
             transform: translateX(6px);
-            border-color: rgba(255, 255, 255, 0.1);
+            border-color: #cbd5e1;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
         .skill-number {
             font-size: 1.1rem;
             font-weight: 800;
-            color: #a855f7;
+            color: #7c3aed;
             margin-right: 2rem;
             min-width: 30px;
         }
@@ -261,12 +263,12 @@
         .skill-info h3 {
             font-size: 1.15rem;
             font-weight: 700;
-            color: #f8fafc;
+            color: #0f172a;
             margin-bottom: 0.3rem;
         }
 
         .skill-info p {
-            color: #94a3b8;
+            color: #64748b;
             font-size: 0.92rem;
         }
 
@@ -278,15 +280,16 @@
         }
 
         .project-card {
-            background: #161922;
+            background: #ffffff;
             border-radius: 12px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: border-color 0.3s ease;
+            border: 1px solid #e2e8f0;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .project-card:hover {
-            border-color: rgba(255, 255, 255, 0.12);
+            border-color: #cbd5e1;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
         }
 
         .project-images-container {
@@ -294,7 +297,7 @@
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 10px;
             padding: 15px;
-            background: #11131b;
+            background: #f1f5f9;
         }
 
         .project-img-wrapper img {
@@ -303,11 +306,12 @@
             object-fit: cover;
             border-radius: 6px;
             display: block;
+            border: 1px solid #e2e8f0;
             transition: opacity 0.3s ease;
         }
 
         .project-img-wrapper img:hover {
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .project-content {
@@ -317,7 +321,7 @@
         .project-tech-tag {
             font-size: 0.75rem;
             font-weight: 700;
-            color: #a855f7;
+            color: #7c3aed;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
@@ -327,12 +331,12 @@
         .project-content h3 {
             font-size: 1.7rem;
             font-weight: 800;
-            color: #fff;
+            color: #0f172a;
             margin-bottom: 0.8rem;
         }
 
         .project-content p {
-            color: #94a3b8;
+            color: #475569;
             font-size: 0.98rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
@@ -342,8 +346,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #f8fafc;
-            background: #212532;
+            color: #0f172a;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
             padding: 0.65rem 1.3rem;
             border-radius: 6px;
             text-decoration: none;
@@ -353,8 +358,8 @@
         }
 
         .project-btn:hover {
-            background: #f8fafc;
-            color: #0f1117;
+            background: #0f172a;
+            color: #ffffff;
         }
 
         /* --- CONTACT SECTION --- */
@@ -362,14 +367,14 @@
             font-size: 3.2rem;
             font-weight: 800;
             line-height: 1.1;
-            color: #fff;
+            color: #0f172a;
             margin-bottom: 1rem;
             letter-spacing: -1px;
         }
 
         .contact-subtext {
             font-size: 1.05rem;
-            color: #94a3b8;
+            color: #64748b;
             margin-bottom: 2.8rem;
         }
 
@@ -384,17 +389,17 @@
             justify-content: space-between;
             align-items: center;
             padding: 1.4rem 1.8rem;
-            background: #161922;
+            background: #ffffff;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.04);
+            border: 1px solid #e2e8f0;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .contact-card:hover {
-            border-color: rgba(255, 255, 255, 0.12);
+            border-color: #0f172a;
             transform: translateY(-2px);
-            background: #1c202c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
         .contact-card-info {
@@ -406,33 +411,33 @@
             font-size: 0.7rem;
             font-weight: 800;
             letter-spacing: 2px;
-            color: #64748b;
+            color: #94a3b8;
             margin-bottom: 0.2rem;
         }
 
         .contact-detail {
             font-size: 1.05rem;
             font-weight: 700;
-            color: #f8fafc;
+            color: #0f172a;
         }
 
         .contact-arrow {
-            color: #64748b;
+            color: #94a3b8;
             font-size: 1.1rem;
             transition: color 0.3s ease;
         }
 
         .contact-card:hover .contact-arrow {
-            color: #f8fafc;
+            color: #0f172a;
         }
 
         /* --- FOOTER --- */
         footer {
             padding: 2.2rem 0;
             text-align: center;
-            color: #64748b;
+            color: #94a3b8;
             font-size: 0.85rem;
-            background-color: #0b0c10;
+            background-color: #f1f5f9;
         }
 
         @media (max-width: 768px) {
