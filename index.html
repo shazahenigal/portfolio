@@ -40,7 +40,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(253, 251, 247, 0.94);
+            background: rgba(253, 251, 247, 0.95);
             backdrop-filter: blur(14px);
             z-index: 1000;
             border-bottom: 1px solid #ede8e0;
@@ -57,7 +57,7 @@
         }
 
         .logo {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             font-weight: 800;
             color: #1a202c;
             text-decoration: none;
@@ -70,7 +70,7 @@
         }
 
         .logo span {
-            color: #881337; /* Deep Burgundy/Rosewood أغمق وأفخم */
+            color: #881337; /* Deep Burgundy */
         }
 
         .nav-links {
@@ -82,7 +82,7 @@
         .nav-links a {
             color: #718096;
             text-decoration: none;
-            font-size: 0.72rem; /* تصغير الخط ليكون سمبل وأنيق */
+            font-size: 0.72rem;
             font-weight: 600;
             letter-spacing: 1.2px;
             padding: 0.35rem 0.65rem;
@@ -377,7 +377,7 @@
             box-shadow: 0 4px 12px rgba(136, 19, 55, 0.2);
         }
 
-        /* --- CONTACT SECTION (تحسينات كاملة للتجاوب مع الموبايل) --- */
+        /* --- CONTACT SECTION --- */
         .contact-section {
             background-color: #f3ece2;
             border-bottom: none;
@@ -442,7 +442,7 @@
             font-size: 1rem;
             font-weight: 700;
             color: #1a202c;
-            word-break: break-word; /* منع الخروج من حواف الموبايل */
+            word-break: break-word;
         }
 
         .contact-arrow {
@@ -467,38 +467,52 @@
             background-color: #eaddcb;
         }
 
-        /* --- RESPONSIVE MOBILE STYLING --- */
+        /* --- RESPONSIVE MOBILE STYLING (OPTIMIZED NAVBAR) --- */
         @media (max-width: 768px) {
             .nav-container {
-                flex-direction: column;
-                gap: 0.6rem;
-                padding: 0.7rem 1rem;
+                flex-direction: row; /* Keeping logo left and links right / clean horizontal flow */
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.6rem 1rem;
+            }
+
+            .logo {
+                font-size: 1.1rem; /* Smaller, delicate logo size for mobile */
             }
 
             .nav-links {
                 display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 0.3rem;
-                width: 100%;
+                gap: 0.15rem; /* Balanced spacing */
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for clean UI */
             }
 
             .nav-links a {
-                font-size: 0.68rem; /* خط أصغر وأرتب جداً للموبايل */
-                padding: 0.25rem 0.5rem;
+                font-size: 0.62rem; /* Clean & crisp link font */
+                padding: 0.25rem 0.45rem;
+                letter-spacing: 0.8px;
             }
 
-            .hero-text h1 { font-size: 2.3rem; }
-            .big-statement { font-size: 2.1rem; }
-            .about-meta-grid { gap: 1.8rem; }
+            .hero-section {
+                padding-top: 5.5rem; /* Adjusted top padding */
+            }
+
+            .hero-text h1 { font-size: 2.2rem; }
+            .big-statement { font-size: 2rem; }
+            .about-meta-grid { gap: 1.5rem; }
             .project-images-container { grid-template-columns: 1fr; }
 
             .contact-card {
-                padding: 1rem 1.2rem; /* ضبط المسافات بداخل كروت التواصل للموبايل */
+                padding: 1rem 1.1rem;
             }
 
             .contact-detail {
-                font-size: 0.88rem; /* ضبط حجم الإيميل والروابط لتنسيق كامل */
+                font-size: 0.85rem;
             }
         }
     </style>
