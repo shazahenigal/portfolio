@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Shaza Mohamed Henigal — Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,15 +21,18 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #faf8f5;
             color: #292524;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
             line-height: 1.6;
             overflow-x: hidden;
+            width: 100%;
         }
 
         .container {
-            max-width: 1050px;
+            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
@@ -40,24 +43,24 @@
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(250, 248, 245, 0.93);
+            background: rgba(250, 248, 245, 0.95);
             backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             z-index: 1000;
             border-bottom: 1px solid #e7e5e4;
-            transition: all 0.3s ease;
         }
 
         .nav-container {
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 0.9rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: #1c1917;
             text-decoration: none;
@@ -72,16 +75,17 @@
             display: flex;
             list-style: none;
             gap: 1.2rem;
+            align-items: center;
         }
 
         .nav-links a {
             color: #78716c;
             text-decoration: none;
-            font-size: 0.78rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 1.2px;
-            padding: 0.35rem 0.65rem;
-            border-radius: 5px;
+            letter-spacing: 1px;
+            padding: 0.4rem 0.7rem;
+            border-radius: 6px;
             transition: all 0.3s ease;
         }
 
@@ -92,16 +96,23 @@
 
         .menu-toggle {
             display: none;
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: #1c1917;
             background: none;
             border: none;
             cursor: pointer;
+            padding: 0.3rem;
+            border-radius: 4px;
+            transition: color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: #6b1724;
         }
 
         /* --- SECTIONS --- */
         section {
-            padding: 6.5rem 0 4.5rem 0;
+            padding: 7rem 0 5rem 0;
             border-bottom: 1px solid #e7e5e4;
         }
 
@@ -116,7 +127,7 @@
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 2.5rem;
@@ -125,10 +136,10 @@
 
         /* --- HERO SECTION --- */
         .hero-section {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            padding-top: 7rem;
+            padding-top: 8rem;
             background: radial-gradient(circle at 10% 20%, rgba(107, 23, 36, 0.03) 0%, transparent 45%);
         }
 
@@ -140,7 +151,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 3.4rem;
             font-weight: 800;
             color: #1c1917;
             margin: 0.5rem 0;
@@ -149,14 +160,14 @@
         }
 
         .hero-role {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #6b1724;
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
-            max-width: 650px;
+            max-width: 680px;
             font-size: 1.05rem;
             color: #44403c;
             line-height: 1.8;
@@ -189,7 +200,7 @@
 
         .btn-primary:hover {
             background-color: #52111b;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -201,12 +212,12 @@
         .btn-secondary:hover {
             border-color: #6b1724;
             color: #6b1724;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         /* --- ABOUT SECTION --- */
         .highlight-statement {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 1.5rem;
@@ -249,8 +260,8 @@
 
         /* --- SKILLS SECTION --- */
         .skills-list {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.2rem;
         }
 
@@ -265,7 +276,7 @@
         }
 
         .skill-item:hover {
-            transform: translateX(8px);
+            transform: translateY(-3px);
             border-color: rgba(107, 23, 36, 0.25);
             box-shadow: 0 8px 24px rgba(107, 23, 36, 0.04);
         }
@@ -274,7 +285,7 @@
             font-size: 1.1rem;
             font-weight: 800;
             color: #6b1724;
-            margin-right: 2rem;
+            margin-right: 1.5rem;
             min-width: 30px;
         }
 
@@ -302,39 +313,33 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #e7e5e4;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .project-card:hover {
             border-color: rgba(107, 23, 36, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(107, 23, 36, 0.06);
+            box-shadow: 0 12px 28px rgba(107, 23, 36, 0.05);
         }
 
         .project-images-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
-            padding: 15px;
+            gap: 12px;
+            padding: 18px;
             background: #f5f2eb;
         }
 
         .project-img-wrapper img {
             width: 100%;
-            height: 190px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
             display: block;
             border: 1px solid #e7e5e4;
-            transition: transform 0.3s ease;
-        }
-
-        .project-img-wrapper img:hover {
-            transform: scale(1.02);
         }
 
         .project-content {
-            padding: 1.8rem;
+            padding: 2rem;
         }
 
         .project-tech-tag {
@@ -361,7 +366,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Technical Stack Details Box */
         .project-details-box {
             background-color: #faf8f5;
             border: 1px solid #e7e5e4;
@@ -371,7 +375,7 @@
         }
 
         .project-details-box h4 {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 800;
             color: #6b1724;
             text-transform: uppercase;
@@ -416,7 +420,7 @@
             border-color: #6b1724;
         }
 
-        /* --- CONTACT SECTION & WORKING FORM --- */
+        /* --- CONTACT SECTION & FORM --- */
         .contact-section {
             background-color: #f2ede4;
             border-bottom: none;
@@ -425,7 +429,7 @@
         .contact-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 3.5rem;
             align-items: start;
         }
 
@@ -465,7 +469,6 @@
         .contact-card:hover {
             border-color: #6b1724;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(107, 23, 36, 0.06);
         }
 
         .contact-type {
@@ -487,13 +490,11 @@
             font-size: 1rem;
         }
 
-        /* Form Styling */
         .contact-form-card {
             background: #ffffff;
             border-radius: 12px;
             padding: 2rem;
             border: 1px solid #e7e5e4;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
         }
 
         .form-group {
@@ -506,7 +507,6 @@
             font-weight: 700;
             color: #1c1917;
             margin-bottom: 0.4rem;
-            letter-spacing: 0.5px;
         }
 
         .form-control {
@@ -519,7 +519,6 @@
             font-size: 0.9rem;
             color: #1c1917;
             outline: none;
-            transition: border-color 0.3s ease;
         }
 
         .form-control:focus {
@@ -541,11 +540,14 @@
             background-color: #e7e0d5;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES (TABLET & MOBILE) --- */
+        /* --- RESPONSIVE MEDIA QUERIES --- */
         @media (max-width: 992px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
+            }
+            .hero-text h1 {
+                font-size: 2.8rem;
             }
         }
 
@@ -555,11 +557,7 @@
             }
 
             section {
-                padding: 4rem 0 2.8rem 0;
-            }
-
-            .nav-container {
-                padding: 0.8rem 1.2rem;
+                padding: 5rem 0 3.5rem 0;
             }
 
             .menu-toggle {
@@ -571,66 +569,91 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(250, 248, 245, 0.98);
-                backdrop-filter: blur(14px);
+                background: #faf8f5;
                 flex-direction: column;
                 gap: 0;
                 border-bottom: 1px solid #e7e5e4;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
                 display: none;
-                padding: 0.5rem 0;
+                padding: 0.8rem 0;
             }
 
             .nav-links.active {
                 display: flex;
             }
 
+            .nav-links li {
+                width: 100%;
+            }
+
             .nav-links a {
                 display: block;
-                padding: 0.8rem 1.5rem;
-                font-size: 0.8rem;
+                padding: 0.8rem 1.8rem;
+                font-size: 0.85rem;
                 border-radius: 0;
+                text-align: left;
             }
 
             .hero-section {
-                padding-top: 5rem;
+                padding-top: 6rem;
                 min-height: auto;
             }
 
             .hero-text h1 {
-                font-size: 2rem;
-                line-height: 1.2;
+                font-size: 2.1rem;
+                line-height: 1.25;
             }
 
             .hero-role {
-                font-size: 1.15rem;
+                font-size: 1.2rem;
+                margin-bottom: 1.2rem;
             }
 
             .hero-description {
-                font-size: 0.92rem;
+                font-size: 0.95rem;
                 line-height: 1.7;
             }
 
             .hero-actions {
                 flex-direction: column;
                 gap: 0.8rem;
+                width: 100%;
             }
 
             .btn-primary, .btn-secondary {
                 width: 100%;
+                padding: 0.8rem 1rem;
             }
 
             .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 1.6rem;
+                font-size: 1.6rem;
+                margin-bottom: 1.8rem;
             }
 
             .highlight-statement {
-                font-size: 1.3rem;
+                font-size: 1.35rem;
+            }
+
+            .about-text {
+                font-size: 0.95rem;
             }
 
             .about-meta-grid {
                 flex-direction: column;
                 gap: 1.2rem;
+                margin-top: 2rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
+            .project-images-container {
+                grid-template-columns: 1fr;
+            }
+
+            .project-content {
+                padding: 1.4rem;
             }
 
             .project-content h3 {
@@ -653,9 +676,11 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#home" class="logo">Shaza<span>.</span></a>
+            
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
+            
             <nav>
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">HOME</a></li>
@@ -761,198 +786,4 @@
                 </div>
 
                 <div class="skill-item">
-                    <span class="skill-number">06</span>
-                    <div class="skill-info">
-                        <h3>Git / GitHub</h3>
-                        <p>Version control & project management</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 4: SELECTED WORK -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <span class="section-label">SELECTED WORK</span>
-            <h2 class="section-title">Things I've built.</h2>
-
-            <div class="projects-grid">
-                
-                <!-- Project 1: MAISON -->
-                <article class="project-card">
-                    <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/maison-1.png" alt="MAISON Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/maison-2.png" alt="MAISON E-Commerce Catalog"></div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tech-tag">Django / E-Commerce / Full-Stack</span>
-                        <h3>MAISON</h3>
-                        <p>An elegant luxury fashion storefront and exclusive fashion event ticketing platform featuring real-time bag updates, promo code processing, and dynamic responsive frontend views.</p>
-                        
-                        <!-- Detailed Tech Spec -->
-                        <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
-                            <ul class="tech-spec-list">
-                                <li><strong>Core Languages:</strong> Python, JavaScript (ES6+), HTML5, CSS3</li>
-                                <li><strong>Framework & Backend:</strong> Django Framework, Django ORM, SQLite / PostgreSQL</li>
-                                <li><strong>Key Functionalities:</strong> Dynamic Shopping Cart, Promo Code Engine, Event Ticketing Workflow, Admin CMS Dashboard</li>
-                                <li><strong>Tools & Deployment:</strong> Git, GitHub Version Control, Vercel / Cloud Hosting</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://maison-pwdg-git-master-my-projects-5950.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: SAUCIA -->
-                <article class="project-card">
-                    <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/saucia-1.png" alt="SAUCIA Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/saucia-2.png" alt="SAUCIA Menu & Orders"></div>
-                        <div class="project-img-wrapper"><img src="images/saucia-3.png" alt="SAUCIA Details"></div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tech-tag">Python / Django / Full-Stack</span>
-                        <h3>SAUCIA</h3>
-                        <p>A gourmet pasta restaurant web application featuring interactive online menu displays, detailed dish customization, and a smooth digital customer ordering system.</p>
-                        
-                        <!-- Detailed Tech Spec -->
-                        <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
-                            <ul class="tech-spec-list">
-                                <li><strong>Core Languages:</strong> Python, HTML5, CSS3, JavaScript</li>
-                                <li><strong>Framework & Backend:</strong> Django Web Framework, Relational Database Modeling</li>
-                                <li><strong>Key Functionalities:</strong> Interactive Menu Filtering, Custom Item Options, Online Order Submission Flow</li>
-                                <li><strong>Tools & Deployment:</strong> WSGI Server Deployment, PythonAnywhere Hosting, Git & VS Code</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://shazamohamed.pythonanywhere.com" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3: LUMORA -->
-                <article class="project-card">
-                    <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/lumora-1.png" alt="LUMORA Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-2.png" alt="LUMORA Cosmetics"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-3.png" alt="LUMORA Products"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-4.png" alt="LUMORA UI"></div>
-                    </div>
-                    <div class="project-content">
-                        <span class="project-tech-tag">JavaScript / HTML5 / CSS3</span>
-                        <h3>LUMORA</h3>
-                        <p>A sleek, high-performance cosmetics store web app featuring product filtering across skincare, haircare, makeup, and fragrance categories with intuitive interactive UI controls.</p>
-                        
-                        <!-- Detailed Tech Spec -->
-                        <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
-                            <ul class="tech-spec-list">
-                                <li><strong>Core Languages:</strong> Modern JavaScript (Vanilla JS), HTML5 Semantic Markup, Custom CSS3</li>
-                                <li><strong>Frontend Concepts:</strong> Dynamic DOM Manipulation, Category Filtering Engine, Responsive Layout Mechanics</li>
-                                <li><strong>Design System:</strong> Flexbox & CSS Grid, Modern UI Component Design</li>
-                                <li><strong>Tools & Deployment:</strong> Vercel Platform, Git, GitHub</li>
-                            </ul>
-                        </div>
-
-                        <div class="project-links">
-                            <a href="https://lumora-three-omega.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: GET IN TOUCH (WITH WORKING FORM & NO GMAIL SHOWN) -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <span class="section-label">GET IN TOUCH</span>
-            <h2 class="section-title">HAVE A PROJECT IN MIND?</h2>
-            
-            <div class="contact-wrapper">
-                <div class="contact-left">
-                    <p class="big-statement">Let's build<br>something.</p>
-                    <p class="contact-subtext">I'm open to freelance opportunities, full-time positions, and interesting web projects.</p>
-                    
-                    <div class="contact-links-grid">
-                        <a href="https://www.linkedin.com/in/shaza-mohamed-490116398/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                            <div class="contact-card-info">
-                                <span class="contact-type">LINKEDIN</span>
-                                <span class="contact-detail">Shaza Mohamed</span>
-                            </div>
-                            <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
-                        </a>
-
-                        <a href="https://github.com/shazahenigal" target="_blank" rel="noopener noreferrer" class="contact-card">
-                            <div class="contact-card-info">
-                                <span class="contact-type">GITHUB</span>
-                                <span class="contact-detail">@shazahenigal</span>
-                            </div>
-                            <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Interactive Contact Form via Formspree -->
-                <div class="contact-form-card">
-                    <form action="https://formspree.io/f/mbljzvpn" method="POST">
-                        <div class="form-group">
-                            <label for="name">YOUR NAME</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">YOUR EMAIL</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">YOUR MESSAGE</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project or opportunity..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <p>&copy; 2026 Shaza Mohamed Henigal. Built with precision and care.</p>
-        </div>
-    </footer>
-
-    <!-- INTERACTIVE JAVASCRIPT FOR MOBILE MENU -->
-    <script>
-        const menuToggle = id => document.getElementById(id);
-        const toggleBtn = menuToggle('menuToggle');
-        const navLinks = menuToggle('navLinks');
-
-        if (toggleBtn && navLinks) {
-            toggleBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-
-            // Close menu when clicking a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-        }
-    </script>
-</body>
-</html> 
+                    <span class="skill-number">0 
