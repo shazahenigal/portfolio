@@ -57,6 +57,7 @@
             padding: 1rem 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
+            position: relative;
         }
 
         .logo {
@@ -539,7 +540,6 @@
            RESPONSIVE MEDIA QUERIES (لكل الأجهزة بدقة تامة)
            ========================================================= */
 
-        /* للشاشات المتوسطة واللواتبت الصغيرة والآيباد أفقياً (حتى 1024px) */
         @media (max-width: 1024px) {
             .container {
                 max-width: 900px;
@@ -549,7 +549,6 @@
             }
         }
 
-        /* للتابلت والآيباد عمودياً (حتى 900px) */
         @media (max-width: 900px) {
             .contact-wrapper {
                 grid-template-columns: 1fr;
@@ -560,7 +559,6 @@
             }
         }
 
-        /* للموبايلات والتابلت الصغير (حتى 768px) */
         @media (max-width: 768px) {
             .container {
                 padding: 0 1.2rem;
@@ -570,9 +568,17 @@
                 padding: 5rem 0 3.5rem 0;
             }
 
-            /* إظهار زر القائمة المنسدلة (الـ 3 خطوط) على اليمين تماماً */
+            .nav-container {
+                justify-content: flex-end;
+            }
+
+            /* إظهار الـ 3 خطوط على أقصى الشمال */
             .menu-toggle {
                 display: block;
+                position: absolute;
+                left: 1.5rem;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .nav-links {
@@ -686,11 +692,11 @@
     <!-- Navigation Bar -->
     <header class="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">Shaza<span>.</span></a>
-            
             <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
+
+            <a href="#home" class="logo">Shaza<span>.</span></a>
             
             <nav>
                 <ul class="nav-links" id="navLinks">
@@ -941,7 +947,7 @@
 
                 <!-- Contact Form -->
                 <div class="contact-form-card">
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <form action="https://formspree.io/f/mnpjwnvl" method="POST">
                         <div class="form-group">
                             <label for="name">YOUR NAME</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
