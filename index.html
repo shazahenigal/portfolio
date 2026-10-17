@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Shaza Mohamed Henigal — Web Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,6 +21,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #faf8f5;
             color: #292524;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
@@ -30,7 +31,8 @@
         }
 
         .container {
-            max-width: 1050px;
+            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
@@ -43,21 +45,22 @@
             width: 100%;
             background: rgba(250, 248, 245, 0.95);
             backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             z-index: 1000;
             border-bottom: 1px solid #e7e5e4;
         }
 
         .nav-container {
-            max-width: 1050px;
-            margin: 0 auto;
-            padding: 0.9rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         .logo {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 800;
             color: #1c1917;
             text-decoration: none;
@@ -72,16 +75,17 @@
             display: flex;
             list-style: none;
             gap: 1.2rem;
+            align-items: center;
         }
 
         .nav-links a {
             color: #78716c;
             text-decoration: none;
-            font-size: 0.72rem;
+            font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 1.2px;
-            padding: 0.35rem 0.65rem;
-            border-radius: 5px;
+            letter-spacing: 1px;
+            padding: 0.4rem 0.7rem;
+            border-radius: 6px;
             transition: all 0.3s ease;
         }
 
@@ -92,16 +96,18 @@
 
         .menu-toggle {
             display: none;
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             color: #1c1917;
             background: none;
             border: none;
             cursor: pointer;
+            padding: 0.4rem;
+            border-radius: 4px;
         }
 
         /* --- SECTIONS --- */
         section {
-            padding: 6.5rem 0 4.5rem 0;
+            padding: 7rem 0 5rem 0;
             border-bottom: 1px solid #e7e5e4;
         }
 
@@ -116,7 +122,7 @@
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 2.5rem;
@@ -125,10 +131,10 @@
 
         /* --- HERO SECTION --- */
         .hero-section {
-            min-height: 100vh;
+            min-height: 90vh;
             display: flex;
             align-items: center;
-            padding-top: 7rem;
+            padding-top: 8rem;
             background: radial-gradient(circle at 10% 20%, rgba(107, 23, 36, 0.03) 0%, transparent 45%);
         }
 
@@ -140,7 +146,7 @@
         }
 
         .hero-text h1 {
-            font-size: 3.2rem;
+            font-size: 3.4rem;
             font-weight: 800;
             color: #1c1917;
             margin: 0.5rem 0;
@@ -149,14 +155,14 @@
         }
 
         .hero-role {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #6b1724;
             margin-bottom: 1.5rem;
         }
 
         .hero-description {
-            max-width: 650px;
+            max-width: 680px;
             font-size: 1.05rem;
             color: #44403c;
             line-height: 1.8;
@@ -189,7 +195,7 @@
 
         .btn-primary:hover {
             background-color: #52111b;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
@@ -201,12 +207,12 @@
         .btn-secondary:hover {
             border-color: #6b1724;
             color: #6b1724;
-            transform: translateY(-3px);
+            transform: translateY(-2px);
         }
 
         /* --- ABOUT SECTION --- */
         .highlight-statement {
-            font-size: 1.75rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 1.5rem;
@@ -249,8 +255,8 @@
 
         /* --- SKILLS SECTION --- */
         .skills-list {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.2rem;
         }
 
@@ -265,7 +271,7 @@
         }
 
         .skill-item:hover {
-            transform: translateX(8px);
+            transform: translateY(-3px);
             border-color: rgba(107, 23, 36, 0.25);
             box-shadow: 0 8px 24px rgba(107, 23, 36, 0.04);
         }
@@ -274,7 +280,7 @@
             font-size: 1.1rem;
             font-weight: 800;
             color: #6b1724;
-            margin-right: 2rem;
+            margin-right: 1.5rem;
             min-width: 30px;
         }
 
@@ -302,39 +308,33 @@
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #e7e5e4;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
         }
 
         .project-card:hover {
             border-color: rgba(107, 23, 36, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 16px 32px rgba(107, 23, 36, 0.06);
+            box-shadow: 0 12px 28px rgba(107, 23, 36, 0.05);
         }
 
         .project-images-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 10px;
-            padding: 15px;
+            gap: 12px;
+            padding: 18px;
             background: #f5f2eb;
         }
 
         .project-img-wrapper img {
             width: 100%;
-            height: 190px;
+            height: 200px;
             object-fit: cover;
             border-radius: 8px;
             display: block;
             border: 1px solid #e7e5e4;
-            transition: transform 0.3s ease;
-        }
-
-        .project-img-wrapper img:hover {
-            transform: scale(1.02);
         }
 
         .project-content {
-            padding: 1.8rem;
+            padding: 2rem;
         }
 
         .project-tech-tag {
@@ -552,15 +552,11 @@
             }
 
             section {
-                padding: 4.5rem 0 3rem 0;
+                padding: 5rem 0 3.5rem 0;
             }
 
             .menu-toggle {
                 display: block;
-            }
-
-            .nav-container {
-                padding: 0.8rem 1.2rem;
             }
 
             .nav-links {
@@ -594,21 +590,22 @@
             }
 
             .hero-section {
-                padding-top: 5.5rem;
+                padding-top: 6rem;
                 min-height: auto;
             }
 
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
                 line-height: 1.25;
             }
 
             .hero-role {
-                font-size: 1.15rem;
+                font-size: 1.2rem;
+                margin-bottom: 1.2rem;
             }
 
             .hero-description {
-                font-size: 0.92rem;
+                font-size: 0.95rem;
                 line-height: 1.7;
             }
 
@@ -624,16 +621,16 @@
             }
 
             .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 1.6rem;
+                font-size: 1.6rem;
+                margin-bottom: 1.8rem;
             }
 
             .highlight-statement {
-                font-size: 1.3rem;
+                font-size: 1.35rem;
             }
 
             .about-text {
-                font-size: 0.92rem;
+                font-size: 0.95rem;
             }
 
             .about-meta-grid {
@@ -642,16 +639,20 @@
                 margin-top: 2rem;
             }
 
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+
             .project-images-container {
                 grid-template-columns: 1fr;
             }
 
             .project-content {
-                padding: 1.3rem;
+                padding: 1.4rem;
             }
 
             .project-content h3 {
-                font-size: 1.35rem;
+                font-size: 1.4rem;
             }
 
             .big-statement {
@@ -845,12 +846,12 @@
                                 <li><strong>Core Languages:</strong> Python, HTML5, CSS3, JavaScript</li>
                                 <li><strong>Framework & Backend:</strong> Django Web Framework, Relational Database Modeling</li>
                                 <li><strong>Key Functionalities:</strong> Interactive Menu Filtering, Custom Item Options, Online Order Submission Flow</li>
-                                <li><strong>Tools & Deployment:</strong> WSGI Server Deployment, PythonAnywhere Hosting, Git & VS Code</li>
+                                <li><strong>Tools & Deployment:</strong> Git, GitHub, Vercel Hosting</li>
                             </ul>
                         </div>
 
                         <div class="project-links">
-                            <a href="https://shazamohamed.pythonanywhere.com" target="_blank" rel="noopener noreferrer" class="project-btn">
+                            <a href="https://saucia-pasta.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
                                 Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
