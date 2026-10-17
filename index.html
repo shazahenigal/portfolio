@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shaza Mohamed Henigal — Web Developer</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
         * {
             margin: 0;
@@ -18,6 +19,7 @@
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 85px;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: #faf8f5;
             color: #292524;
@@ -30,20 +32,32 @@
             width: 100%;
         }
 
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
+        img {
+            display: block;
+            max-width: 100%;
         }
 
-        /* --- NAVBAR --- */
+        a, button, input, textarea {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        button, input, textarea {
+            font: inherit;
+        }
+
+        .container {
+            width: min(100% - 3rem, 1100px);
+            margin-inline: auto;
+        }
+
+        /* NAVBAR */
+
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(250, 248, 245, 0.95);
+            background: rgba(250, 248, 245, 0.96);
             backdrop-filter: blur(14px);
             -webkit-backdrop-filter: blur(14px);
             z-index: 1000;
@@ -54,13 +68,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 1.5rem;
-            max-width: 1100px;
-            margin: 0 auto;
+            gap: 1rem;
+            min-height: 76px;
+            padding-block: 0.8rem;
         }
 
         .logo {
-            font-size: 1.3rem;
+            flex-shrink: 0;
+            font-size: clamp(1.15rem, 2vw, 1.3rem);
             font-weight: 800;
             color: #1c1917;
             text-decoration: none;
@@ -74,41 +89,49 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.2rem;
+            gap: clamp(0.25rem, 1.2vw, 1.2rem);
             align-items: center;
         }
 
         .nav-links a {
+            display: block;
             color: #78716c;
             text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            padding: 0.4rem 0.7rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+            padding: 0.55rem 0.65rem;
             border-radius: 6px;
-            transition: all 0.3s ease;
+            transition: color 0.25s ease, background 0.25s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a:focus-visible {
             color: #6b1724;
-            background-color: rgba(107, 23, 36, 0.05);
+            background-color: rgba(107, 23, 36, 0.07);
         }
 
         .menu-toggle {
             display: none;
-            font-size: 1.3rem;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            font-size: 1.35rem;
             color: #1c1917;
-            background: none;
-            border: none;
+            background: transparent;
+            border: 1px solid #e7e5e4;
+            border-radius: 8px;
             cursor: pointer;
-            padding: 0.4rem;
-            border-radius: 4px;
         }
 
-        /* --- SECTIONS --- */
+        /* GENERAL SECTIONS */
+
         section {
-            padding: 7rem 0 5rem 0;
+            padding-block: clamp(5rem, 9vw, 7rem) clamp(3.5rem, 6vw, 5rem);
             border-bottom: 1px solid #e7e5e4;
+            scroll-margin-top: 75px;
         }
 
         .section-label {
@@ -122,20 +145,36 @@
         }
 
         .section-title {
-            font-size: 2.2rem;
+            font-size: clamp(1.65rem, 4vw, 2.2rem);
             font-weight: 800;
             color: #1c1917;
-            margin-bottom: 2.5rem;
+            margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
             letter-spacing: -0.5px;
+            line-height: 1.25;
+            overflow-wrap: anywhere;
         }
 
-        /* --- HERO SECTION --- */
+        /* HOME / HERO */
+
         .hero-section {
             min-height: 90vh;
+            min-height: 90svh;
             display: flex;
             align-items: center;
-            padding-top: 8rem;
-            background: radial-gradient(circle at 10% 20%, rgba(107, 23, 36, 0.03) 0%, transparent 45%);
+            padding-top: clamp(8rem, 15vw, 10rem);
+            background: radial-gradient(
+                circle at 10% 20%,
+                rgba(107, 23, 36, 0.05) 0%,
+                transparent 45%
+            );
+        }
+
+        .hero-container {
+            width: 100%;
+        }
+
+        .hero-text {
+            max-width: 850px;
         }
 
         .sub-title {
@@ -146,44 +185,50 @@
         }
 
         .hero-text h1 {
-            font-size: 3.4rem;
+            font-size: clamp(2.15rem, 6vw, 3.8rem);
             font-weight: 800;
             color: #1c1917;
-            margin: 0.5rem 0;
-            letter-spacing: -1px;
-            line-height: 1.15;
+            margin: 0.6rem 0;
+            letter-spacing: -1.2px;
+            line-height: 1.13;
+            overflow-wrap: anywhere;
         }
 
         .hero-role {
-            font-size: 1.5rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 700;
             color: #6b1724;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.3rem;
         }
 
         .hero-description {
             max-width: 680px;
-            font-size: 1.05rem;
+            font-size: clamp(0.95rem, 1.6vw, 1.05rem);
             color: #44403c;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
         }
 
         .hero-actions {
             display: flex;
-            gap: 1.2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
 
-        .btn-primary, .btn-secondary {
-            display: inline-block;
-            padding: 0.85rem 1.8rem;
+        .btn-primary,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.85rem 1.5rem;
             border-radius: 8px;
             font-weight: 700;
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
+            transition: all 0.25s ease;
+            border: 1px solid transparent;
             cursor: pointer;
         }
 
@@ -199,7 +244,7 @@
         }
 
         .btn-secondary {
-            border: 1px solid #d6d3d1;
+            border-color: #d6d3d1;
             color: #292524;
             background-color: #ffffff;
         }
@@ -210,25 +255,29 @@
             transform: translateY(-2px);
         }
 
-        /* --- ABOUT SECTION --- */
+        /* ABOUT */
+
         .highlight-statement {
-            font-size: 1.8rem;
+            max-width: 850px;
+            font-size: clamp(1.35rem, 3.8vw, 1.8rem);
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 1.5rem;
+            line-height: 1.35;
         }
 
         .about-text {
             max-width: 780px;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: #44403c;
-            line-height: 1.8;
+            line-height: 1.85;
             margin-bottom: 1.2rem;
         }
 
         .about-meta-grid {
             display: flex;
-            gap: 4rem;
+            flex-wrap: wrap;
+            gap: clamp(2rem, 7vw, 4rem);
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid #e7e5e4;
@@ -237,6 +286,7 @@
         .meta-box {
             display: flex;
             flex-direction: column;
+            min-width: 130px;
         }
 
         .meta-title {
@@ -253,111 +303,128 @@
             color: #1c1917;
         }
 
-        /* --- SKILLS SECTION --- */
+        /* SKILLS */
+
         .skills-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.2rem;
         }
 
         .skill-item {
             display: flex;
             align-items: flex-start;
-            padding: 1.4rem;
+            min-width: 0;
+            padding: clamp(1rem, 2.5vw, 1.4rem);
             background: #ffffff;
             border-radius: 10px;
             border: 1px solid #e7e5e4;
-            transition: all 0.3s ease;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
 
         .skill-item:hover {
             transform: translateY(-3px);
             border-color: rgba(107, 23, 36, 0.25);
-            box-shadow: 0 8px 24px rgba(107, 23, 36, 0.04);
+            box-shadow: 0 8px 24px rgba(107, 23, 36, 0.05);
         }
 
         .skill-number {
-            font-size: 1.1rem;
+            flex: 0 0 30px;
+            font-size: 1.05rem;
             font-weight: 800;
             color: #6b1724;
-            margin-right: 1.5rem;
-            min-width: 30px;
+            margin-right: 1rem;
+        }
+
+        .skill-info {
+            min-width: 0;
         }
 
         .skill-info h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #1c1917;
             margin-bottom: 0.3rem;
+            overflow-wrap: anywhere;
         }
 
         .skill-info p {
             color: #78716c;
             font-size: 0.92rem;
+            overflow-wrap: anywhere;
         }
 
-        /* --- PROJECTS SECTION --- */
+        /* PROJECTS */
+
         .projects-grid {
             display: flex;
             flex-direction: column;
-            gap: 3.5rem;
+            gap: clamp(2rem, 5vw, 3.5rem);
         }
 
         .project-card {
+            min-width: 0;
             background: #ffffff;
             border-radius: 14px;
             overflow: hidden;
             border: 1px solid #e7e5e4;
-            transition: all 0.3s ease;
+            transition: box-shadow 0.25s ease;
         }
 
         .project-card:hover {
-            border-color: rgba(107, 23, 36, 0.2);
-            box-shadow: 0 12px 28px rgba(107, 23, 36, 0.05);
+            box-shadow: 0 12px 28px rgba(107, 23, 36, 0.06);
         }
 
         .project-images-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 12px;
-            padding: 18px;
+            padding: clamp(0.65rem, 2.5vw, 1.1rem);
             background: #f5f2eb;
+        }
+
+        .project-img-wrapper {
+            min-width: 0;
+            overflow: hidden;
+            border-radius: 8px;
         }
 
         .project-img-wrapper img {
             width: 100%;
-            height: 200px;
+            aspect-ratio: 16 / 10;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
-            display: block;
             border: 1px solid #e7e5e4;
+            background: #ffffff;
         }
 
         .project-content {
-            padding: 2rem;
+            padding: clamp(1.1rem, 4vw, 2rem);
         }
 
         .project-tech-tag {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 800;
             color: #6b1724;
             text-transform: uppercase;
             letter-spacing: 1px;
             display: block;
             margin-bottom: 0.5rem;
+            overflow-wrap: anywhere;
         }
 
         .project-content h3 {
-            font-size: 1.7rem;
+            font-size: clamp(1.4rem, 3vw, 1.7rem);
             font-weight: 800;
             color: #1c1917;
             margin-bottom: 0.8rem;
         }
 
-        .project-content p {
+        .project-content > p {
             color: #44403c;
-            font-size: 0.98rem;
-            line-height: 1.7;
+            font-size: 0.96rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
@@ -365,16 +432,16 @@
             background-color: #faf8f5;
             border: 1px solid #e7e5e4;
             border-radius: 8px;
-            padding: 1.2rem;
+            padding: clamp(0.9rem, 3vw, 1.2rem);
             margin-bottom: 1.5rem;
         }
 
         .project-details-box h4 {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             font-weight: 800;
             color: #6b1724;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             margin-bottom: 0.6rem;
         }
 
@@ -382,12 +449,13 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.55rem;
         }
 
         .tech-spec-list li {
             font-size: 0.88rem;
             color: #44403c;
+            overflow-wrap: anywhere;
         }
 
         .tech-spec-list strong {
@@ -397,16 +465,19 @@
         .project-btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 8px;
+            min-height: 46px;
             color: #1c1917;
             background: #f5f2eb;
             border: 1px solid #e7e5e4;
-            padding: 0.7rem 1.4rem;
+            padding: 0.7rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.88rem;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .project-btn:hover {
@@ -415,7 +486,8 @@
             border-color: #6b1724;
         }
 
-        /* --- CONTACT SECTION & FORM --- */
+        /* CONTACT */
+
         .contact-section {
             background-color: #f2ede4;
             border-bottom: none;
@@ -423,13 +495,18 @@
 
         .contact-wrapper {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3.5rem;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(1.5rem, 5vw, 3.5rem);
             align-items: start;
         }
 
+        .contact-left,
+        .contact-form-card {
+            min-width: 0;
+        }
+
         .big-statement {
-            font-size: 3rem;
+            font-size: clamp(2.1rem, 5vw, 3rem);
             font-weight: 800;
             line-height: 1.1;
             color: #1c1917;
@@ -453,12 +530,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.1rem 1.4rem;
+            gap: 1rem;
+            padding: 1.1rem 1.2rem;
             background: #ffffff;
             border-radius: 10px;
             border: 1px solid #e7e5e4;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .contact-card:hover {
@@ -466,7 +544,12 @@
             transform: translateY(-2px);
         }
 
+        .contact-card-info {
+            min-width: 0;
+        }
+
         .contact-type {
+            display: block;
             font-size: 0.68rem;
             font-weight: 800;
             letter-spacing: 1.5px;
@@ -475,21 +558,25 @@
         }
 
         .contact-detail {
+            display: block;
             font-size: 0.95rem;
             font-weight: 700;
             color: #1c1917;
+            overflow-wrap: anywhere;
         }
 
         .contact-arrow {
             color: #a8a29e;
             font-size: 1rem;
+            flex-shrink: 0;
         }
 
         .contact-form-card {
             background: #ffffff;
             border-radius: 12px;
-            padding: 2rem;
+            padding: clamp(1.1rem, 4vw, 2rem);
             border: 1px solid #e7e5e4;
+            box-shadow: 0 8px 24px rgba(41, 37, 36, 0.03);
         }
 
         .form-group {
@@ -505,72 +592,93 @@
         }
 
         .form-control {
+            display: block;
             width: 100%;
+            min-height: 46px;
             padding: 0.8rem 1rem;
             border-radius: 8px;
             border: 1px solid #e7e5e4;
             background-color: #faf8f5;
             font-family: inherit;
-            font-size: 0.9rem;
+            font-size: 16px;
             color: #1c1917;
             outline: none;
+            transition: border-color 0.2s ease, background 0.2s ease;
         }
 
         .form-control:focus {
             border-color: #6b1724;
             background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(107, 23, 36, 0.08);
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
-        /* --- FOOTER --- */
+        .form-submit {
+            width: 100%;
+        }
+
+        /* FOOTER */
+
         footer {
-            padding: 2.2rem 0;
+            padding: 2rem 0;
             text-align: center;
             color: #78716c;
             font-size: 0.85rem;
             background-color: #e7e0d5;
         }
 
-        /* --- RESPONSIVE MEDIA QUERIES --- */
-        @media (max-width: 992px) {
+        /* TABLET */
+
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 0.2rem;
+            }
+
+            .nav-links a {
+                padding-inline: 0.45rem;
+                font-size: 0.73rem;
+            }
+
             .contact-wrapper {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-            .hero-text h1 {
-                font-size: 2.8rem;
+                gap: 2rem;
             }
         }
 
+        /* MOBILE NAVIGATION */
+
         @media (max-width: 768px) {
             .container {
-                padding: 0 1.2rem;
+                width: min(100% - 2rem, 600px);
             }
 
-            section {
-                padding: 5rem 0 3.5rem 0;
+            .nav-container {
+                min-height: 68px;
             }
 
             .menu-toggle {
-                display: block;
+                display: inline-flex;
             }
 
             .nav-links {
                 position: absolute;
-                top: 100%;
+                top: calc(100% + 1px);
                 left: 0;
                 width: 100%;
+                max-height: calc(100dvh - 70px);
+                overflow-y: auto;
                 background: #faf8f5;
                 flex-direction: column;
+                align-items: stretch;
                 gap: 0;
                 border-bottom: 1px solid #e7e5e4;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+                padding: 0.5rem 1rem 1rem;
                 display: none;
-                padding: 0.8rem 0;
             }
 
             .nav-links.active {
@@ -583,100 +691,139 @@
 
             .nav-links a {
                 display: block;
-                padding: 0.8rem 1.8rem;
+                width: 100%;
+                padding: 0.9rem 1rem;
                 font-size: 0.85rem;
-                border-radius: 0;
+                border-radius: 7px;
                 text-align: left;
             }
 
             .hero-section {
-                padding-top: 6rem;
                 min-height: auto;
+                padding-top: 9rem;
+                padding-bottom: 5rem;
             }
 
             .hero-text h1 {
-                font-size: 2.1rem;
-                line-height: 1.25;
-            }
-
-            .hero-role {
-                font-size: 1.2rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .hero-description {
-                font-size: 0.95rem;
-                line-height: 1.7;
+                letter-spacing: -0.7px;
             }
 
             .hero-actions {
-                flex-direction: column;
-                gap: 0.8rem;
-                width: 100%;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                padding: 0.8rem 1rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
-                margin-bottom: 1.8rem;
-            }
-
-            .highlight-statement {
-                font-size: 1.35rem;
-            }
-
-            .about-text {
-                font-size: 0.95rem;
-            }
-
-            .about-meta-grid {
-                flex-direction: column;
-                gap: 1.2rem;
-                margin-top: 2rem;
+                gap: 0.75rem;
             }
 
             .skills-list {
                 grid-template-columns: 1fr;
             }
 
-            .project-images-container {
-                grid-template-columns: 1fr;
-            }
-
-            .project-content {
-                padding: 1.4rem;
-            }
-
-            .project-content h3 {
-                font-size: 1.4rem;
-            }
-
-            .big-statement {
-                font-size: 2.2rem;
+            .contact-wrapper {
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .contact-form-card {
-                padding: 1.4rem;
+                width: 100%;
+            }
+        }
+
+        /* SMALL MOBILE */
+
+        @media (max-width: 480px) {
+            .container {
+                width: min(100% - 1.5rem, 440px);
+            }
+
+            section {
+                padding-top: 5.5rem;
+                padding-bottom: 3.5rem;
+            }
+
+            .hero-section {
+                padding-top: 8rem;
+            }
+
+            .sub-title {
+                font-size: 0.75rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-actions a {
+                width: 100%;
+            }
+
+            .about-meta-grid {
+                gap: 1.3rem;
+            }
+
+            .project-images-container {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .project-img-wrapper img {
+                aspect-ratio: 16 / 10;
+            }
+
+            .project-btn {
+                width: 100%;
+            }
+
+            .contact-card {
+                padding: 1rem;
+            }
+
+            footer {
+                padding-inline: 0.5rem;
+                font-size: 0.78rem;
+            }
+        }
+
+        /* ACCESSIBILITY */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid rgba(107, 23, 36, 0.45);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <!-- Navigation Bar -->
+    <!-- NAVIGATION -->
     <header class="navbar">
-        <div class="nav-container">
+        <div class="nav-container container">
             <a href="#home" class="logo">Shaza<span>.</span></a>
-            
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="navLinks"
+                aria-expanded="false"
+            >
+                <i class="fas fa-bars" aria-hidden="true"></i>
             </button>
-            
-            <nav>
+
+            <nav aria-label="Main navigation">
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home">HOME</a></li>
                     <li><a href="#about">ABOUT</a></li>
@@ -688,16 +835,18 @@
         </div>
     </header>
 
-    <!-- SECTION 1: HOME -->
+    <!-- HOME -->
     <section id="home" class="hero-section">
         <div class="container hero-container">
             <div class="hero-text">
                 <span class="sub-title">HELLO, I'M</span>
                 <h1>Shaza Mohamed Henigal</h1>
                 <p class="hero-role">Web Developer</p>
+
                 <p class="hero-description">
                     I specialize in building modern, responsive websites with a focus on clean design, functionality, and user experience. Using Python, Django, JavaScript, and modern web technologies, I turn ideas into practical digital solutions that combine creativity with performance.
                 </p>
+
                 <div class="hero-actions">
                     <a href="#projects" class="btn-primary">View Selected Work</a>
                     <a href="#contact" class="btn-secondary">Let's Connect</a>
@@ -706,16 +855,17 @@
         </div>
     </section>
 
-    <!-- SECTION 2: ABOUT ME -->
+    <!-- ABOUT ME -->
     <section id="about" class="about-section">
         <div class="container">
             <span class="section-label">ABOUT ME</span>
             <h2 class="section-title">BACKGROUND</h2>
             <h3 class="highlight-statement">I turn ideas into digital experiences.</h3>
-            
+
             <p class="about-text">
-                I'm a Web Developer with an academic background in Computer & Information Sciences, specializing in Information Systems at Mansoura University.
+                I'm a Web Developer with an academic background in Computer &amp; Information Sciences, specializing in Information Systems at Mansoura University.
             </p>
+
             <p class="about-text">
                 I build modern, responsive, and user-friendly websites using Python, Django, JavaScript, HTML, and CSS, with a focus on functionality, clean design, and seamless user experiences.
             </p>
@@ -725,6 +875,7 @@
                     <span class="meta-title">FOCUS</span>
                     <span class="meta-value">Web Development</span>
                 </div>
+
                 <div class="meta-box">
                     <span class="meta-title">BASED IN</span>
                     <span class="meta-value">Egypt</span>
@@ -733,10 +884,10 @@
         </div>
     </section>
 
-    <!-- SECTION 3: SKILLS & TOOLS -->
+    <!-- SKILLS & TOOLS -->
     <section id="skills" class="skills-section">
         <div class="container">
-            <span class="section-label">SKILLS & TOOLS</span>
+            <span class="section-label">SKILLS &amp; TOOLS</span>
             <h2 class="section-title">Technologies I work with.</h2>
 
             <div class="skills-list">
@@ -744,7 +895,7 @@
                     <span class="skill-number">01</span>
                     <div class="skill-info">
                         <h3>Python</h3>
-                        <p>Backend development & programming fundamentals</p>
+                        <p>Backend development &amp; programming fundamentals</p>
                     </div>
                 </div>
 
@@ -752,7 +903,7 @@
                     <span class="skill-number">02</span>
                     <div class="skill-info">
                         <h3>Django</h3>
-                        <p>Building web applications & server-side functionality</p>
+                        <p>Building web applications &amp; server-side functionality</p>
                     </div>
                 </div>
 
@@ -760,7 +911,7 @@
                     <span class="skill-number">03</span>
                     <div class="skill-info">
                         <h3>JavaScript</h3>
-                        <p>Interactive features & dynamic web experiences</p>
+                        <p>Interactive features &amp; dynamic web experiences</p>
                     </div>
                 </div>
 
@@ -768,15 +919,15 @@
                     <span class="skill-number">04</span>
                     <div class="skill-info">
                         <h3>HTML / CSS</h3>
-                        <p>Responsive layouts & modern user interfaces</p>
+                        <p>Responsive layouts &amp; modern user interfaces</p>
                     </div>
                 </div>
 
                 <div class="skill-item">
                     <span class="skill-number">05</span>
                     <div class="skill-info">
-                        <h3>SQL & Databases</h3>
-                        <p>Data management & database fundamentals</p>
+                        <h3>SQL &amp; Databases</h3>
+                        <p>Data management &amp; database fundamentals</p>
                     </div>
                 </div>
 
@@ -784,106 +935,133 @@
                     <span class="skill-number">06</span>
                     <div class="skill-info">
                         <h3>Git / GitHub</h3>
-                        <p>Version control & project management</p>
+                        <p>Version control &amp; project management</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 4: SELECTED WORK -->
+    <!-- SELECTED WORK -->
     <section id="projects" class="projects-section">
         <div class="container">
             <span class="section-label">SELECTED WORK</span>
             <h2 class="section-title">Things I've built.</h2>
 
             <div class="projects-grid">
-                
-                <!-- Project 1: MAISON -->
+
+                <!-- PROJECT 1: MAISON -->
                 <article class="project-card">
                     <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/maison-1.png" alt="MAISON Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/maison-2.png" alt="MAISON E-Commerce Catalog"></div>
+                        <div class="project-img-wrapper">
+                            <img src="images/maison-1.png" alt="MAISON Landing Page" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/maison-2.png" alt="MAISON E-Commerce Catalog" loading="lazy">
+                        </div>
                     </div>
+
                     <div class="project-content">
                         <span class="project-tech-tag">Django / E-Commerce / Full-Stack</span>
                         <h3>MAISON</h3>
-                        <p>An elegant luxury fashion storefront and exclusive fashion event ticketing platform featuring real-time bag updates, promo code processing, and dynamic responsive frontend views.</p>
-                        
+                        <p>
+                            An elegant luxury fashion storefront and exclusive fashion event ticketing platform featuring real-time bag updates, promo code processing, and dynamic responsive frontend views.
+                        </p>
+
                         <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
+                            <h4>Technical Architecture &amp; Tools</h4>
                             <ul class="tech-spec-list">
                                 <li><strong>Core Languages:</strong> Python, JavaScript (ES6+), HTML5, CSS3</li>
-                                <li><strong>Framework & Backend:</strong> Django Framework, Django ORM, SQLite / PostgreSQL</li>
+                                <li><strong>Framework &amp; Backend:</strong> Django Framework, Django ORM, SQLite / PostgreSQL</li>
                                 <li><strong>Key Functionalities:</strong> Dynamic Shopping Cart, Promo Code Engine, Event Ticketing Workflow, Admin CMS Dashboard</li>
-                                <li><strong>Tools & Deployment:</strong> Git, GitHub Version Control, Vercel / Cloud Hosting</li>
+                                <li><strong>Tools &amp; Deployment:</strong> Git, GitHub Version Control, Vercel / Cloud Hosting</li>
                             </ul>
                         </div>
 
                         <div class="project-links">
                             <a href="https://maison-pwdg-git-master-my-projects-5950.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
+                                Live Preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project 2: SAUCIA -->
+                <!-- PROJECT 2: SAUCIA -->
                 <article class="project-card">
                     <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/saucia-1.png" alt="SAUCIA Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/saucia-2.png" alt="SAUCIA Menu & Orders"></div>
-                        <div class="project-img-wrapper"><img src="images/saucia-3.png" alt="SAUCIA Details"></div>
+                        <div class="project-img-wrapper">
+                            <img src="images/saucia-1.png" alt="SAUCIA Landing Page" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/saucia-2.png" alt="SAUCIA Menu and Orders" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/saucia-3.png" alt="SAUCIA Details" loading="lazy">
+                        </div>
                     </div>
+
                     <div class="project-content">
                         <span class="project-tech-tag">Python / Django / Full-Stack</span>
                         <h3>SAUCIA</h3>
-                        <p>A gourmet pasta restaurant web application featuring interactive online menu displays, detailed dish customization, and a smooth digital customer ordering system.</p>
-                        
+                        <p>
+                            A gourmet pasta restaurant web application featuring interactive online menu displays, detailed dish customization, and a smooth digital customer ordering system.
+                        </p>
+
                         <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
+                            <h4>Technical Architecture &amp; Tools</h4>
                             <ul class="tech-spec-list">
                                 <li><strong>Core Languages:</strong> Python, HTML5, CSS3, JavaScript</li>
-                                <li><strong>Framework & Backend:</strong> Django Web Framework, Relational Database Modeling</li>
+                                <li><strong>Framework &amp; Backend:</strong> Django Web Framework, Relational Database Modeling</li>
                                 <li><strong>Key Functionalities:</strong> Interactive Menu Filtering, Custom Item Options, Online Order Submission Flow</li>
-                                <li><strong>Tools & Deployment:</strong> Git, GitHub, Vercel Hosting</li>
+                                <li><strong>Tools &amp; Deployment:</strong> Git, GitHub, Vercel Hosting</li>
                             </ul>
                         </div>
 
                         <div class="project-links">
                             <a href="https://saucia-pasta.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
+                                Live Preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Project 3: LUMORA -->
+                <!-- PROJECT 3: LUMORA -->
                 <article class="project-card">
                     <div class="project-images-container">
-                        <div class="project-img-wrapper"><img src="images/lumora-1.png" alt="LUMORA Landing Page"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-2.png" alt="LUMORA Cosmetics"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-3.png" alt="LUMORA Products"></div>
-                        <div class="project-img-wrapper"><img src="images/lumora-4.png" alt="LUMORA UI"></div>
+                        <div class="project-img-wrapper">
+                            <img src="images/lumora-1.png" alt="LUMORA Landing Page" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/lumora-2.png" alt="LUMORA Cosmetics" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/lumora-3.png" alt="LUMORA Products" loading="lazy">
+                        </div>
+                        <div class="project-img-wrapper">
+                            <img src="images/lumora-4.png" alt="LUMORA User Interface" loading="lazy">
+                        </div>
                     </div>
+
                     <div class="project-content">
                         <span class="project-tech-tag">JavaScript / HTML5 / CSS3</span>
                         <h3>LUMORA</h3>
-                        <p>A sleek, high-performance cosmetics store web app featuring product filtering across skincare, haircare, makeup, and fragrance categories with intuitive interactive UI controls.</p>
-                        
+                        <p>
+                            A sleek, high-performance cosmetics store web app featuring product filtering across skincare, haircare, makeup, and fragrance categories with intuitive interactive UI controls.
+                        </p>
+
                         <div class="project-details-box">
-                            <h4>Technical Architecture & Tools</h4>
+                            <h4>Technical Architecture &amp; Tools</h4>
                             <ul class="tech-spec-list">
                                 <li><strong>Core Languages:</strong> Modern JavaScript (Vanilla JS), HTML5 Semantic Markup, Custom CSS3</li>
                                 <li><strong>Frontend Concepts:</strong> Dynamic DOM Manipulation, Category Filtering Engine, Responsive Layout Mechanics</li>
-                                <li><strong>Design System:</strong> Flexbox & CSS Grid, Modern UI Component Design</li>
-                                <li><strong>Tools & Deployment:</strong> Vercel Platform, Git, GitHub</li>
+                                <li><strong>Design System:</strong> Flexbox &amp; CSS Grid, Modern UI Component Design</li>
+                                <li><strong>Tools &amp; Deployment:</strong> Vercel Platform, Git, GitHub</li>
                             </ul>
                         </div>
 
                         <div class="project-links">
                             <a href="https://lumora-three-omega.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                                Live Preview <i class="fas fa-arrow-up-right-from-square"></i>
+                                Live Preview <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -893,24 +1071,26 @@
         </div>
     </section>
 
-    <!-- SECTION 5: GET IN TOUCH -->
+    <!-- CONTACT -->
     <section id="contact" class="contact-section">
         <div class="container">
             <span class="section-label">GET IN TOUCH</span>
             <h2 class="section-title">HAVE A PROJECT IN MIND?</h2>
-            
+
             <div class="contact-wrapper">
                 <div class="contact-left">
                     <p class="big-statement">Let's build<br>something.</p>
-                    <p class="contact-subtext">I'm open to freelance opportunities, full-time positions, and interesting web projects.</p>
-                    
+                    <p class="contact-subtext">
+                        I'm open to freelance opportunities, full-time positions, and interesting web projects.
+                    </p>
+
                     <div class="contact-links-grid">
                         <a href="https://www.linkedin.com/in/shaza-mohamed-490116398/" target="_blank" rel="noopener noreferrer" class="contact-card">
                             <div class="contact-card-info">
                                 <span class="contact-type">LINKEDIN</span>
                                 <span class="contact-detail">Shaza Mohamed</span>
                             </div>
-                            <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+                            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
                         </a>
 
                         <a href="https://github.com/shazahenigal" target="_blank" rel="noopener noreferrer" class="contact-card">
@@ -918,27 +1098,55 @@
                                 <span class="contact-type">GITHUB</span>
                                 <span class="contact-detail">@shazahenigal</span>
                             </div>
-                            <i class="fas fa-arrow-up-right-from-square contact-arrow"></i>
+                            <i class="fas fa-arrow-up-right-from-square contact-arrow" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Contact Form -->
+                <!-- CONTACT FORM: FORMSPREE -->
                 <div class="contact-form-card">
-                    <form action="https://formspree.io/f/mbljzvpn" method="POST">
+                    <form action="https://formspree.io/f/mnpjwnvl" method="POST">
                         <div class="form-group">
                             <label for="name">YOUR NAME</label>
-                            <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" required>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control"
+                                placeholder="Your name"
+                                autocomplete="name"
+                                required
+                            >
                         </div>
+
                         <div class="form-group">
                             <label for="email">YOUR EMAIL</label>
-                            <input type="email" id="email" name="email" class="form-control" placeholder="john@example.com" required>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="you@example.com"
+                                autocomplete="email"
+                                required
+                            >
                         </div>
+
                         <div class="form-group">
                             <label for="message">YOUR MESSAGE</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Tell me about your project or opportunity..." required></textarea>
+                            <textarea
+                                id="message"
+                                name="message"
+                                class="form-control"
+                                placeholder="Tell me about your project or opportunity..."
+                                rows="5"
+                                required
+                            ></textarea>
                         </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+
+                        <button type="submit" class="btn-primary form-submit">
+                            Send Message
+                        </button>
                     </form>
                 </div>
             </div>
@@ -952,22 +1160,71 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT FOR MOBILE NAVIGATION TOGGLE -->
+    <!-- MOBILE NAVIGATION JAVASCRIPT -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
+        const menuIcon = menuToggle
+            ? menuToggle.querySelector('i')
+            : null;
+
+        function setMenuOpen(isOpen) {
+            if (!menuToggle || !navLinks) return;
+
+            navLinks.classList.toggle('active', isOpen);
+
+            menuToggle.setAttribute(
+                'aria-expanded',
+                String(isOpen)
+            );
+
+            menuToggle.setAttribute(
+                'aria-label',
+                isOpen
+                    ? 'Close navigation menu'
+                    : 'Open navigation menu'
+            );
+
+            if (menuIcon) {
+                menuIcon.classList.toggle('fa-bars', !isOpen);
+                menuIcon.classList.toggle('fa-xmark', isOpen);
+            }
+        }
 
         if (menuToggle && navLinks) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
+            menuToggle.addEventListener('click', function () {
+                const isOpen = navLinks.classList.contains('active');
+                setMenuOpen(!isOpen);
             });
 
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
+            navLinks.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    setMenuOpen(false);
                 });
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    setMenuOpen(false);
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                const clickedInsideMenu = navLinks.contains(event.target);
+                const clickedToggle = menuToggle.contains(event.target);
+
+                if (!clickedInsideMenu && !clickedToggle) {
+                    setMenuOpen(false);
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    setMenuOpen(false);
+                }
             });
         }
     </script>
+
 </body>
 </html> 
